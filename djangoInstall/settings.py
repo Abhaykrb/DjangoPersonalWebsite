@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,14 +21,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'aycto@9h^l&6re&)+wdfepphs(@%dj+zp8v&8r+4s%-8*e18+^'
+SECRET_KEY = 'aycto@9h^l&6re&)+wdfepphs(@%dj+zp8v&8r+4s%-8*e18+^'
 
 #Added later myself
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'aycto@9h^l&6re&)+wdfepphs(@%dj+zp8v&8r+4s%-8*e18+^')
+#SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'aycto@9h^l&6re&)+wdfepphs(@%dj+zp8v&8r+4s%-8*e18+^')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['keshavrajbhusal.herokuapp.com','127.0.0.1']
+DEBUG = True
+#DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+ALLOWED_HOSTS = [
+    
+]
 
 # Application definition
 
@@ -46,9 +47,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    
-    'whitenoise.middleware.WhiteNoiseMiddleware',
-    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -128,7 +126,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT=os.path.join(BASE_DIR,"staticfiles")
 STATIC_URL = '/static/'
 
 #Added manually by myself
@@ -137,5 +134,3 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
-
-
