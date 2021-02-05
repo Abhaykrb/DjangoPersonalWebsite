@@ -28,7 +28,10 @@ SECRET_KEY = 'aycto@9h^l&6re&)+wdfepphs(@%dj+zp8v&8r+4s%-8*e18+^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
-ALLOWED_HOSTS = [keshavrajbhusal.herokuapp.com]
+ALLOWED_HOSTS = [ 'keshavrajbhusal.herokuapp.com',
+                 'localhost',
+                 '127.0.0.1'
+                 ]
 
 # Application definition
 
@@ -45,6 +48,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -132,3 +136,4 @@ STATICFILES_DIRS = [
 ]
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
