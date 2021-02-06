@@ -26,7 +26,7 @@ SECRET_KEY = 'aycto@9h^l&6re&)+wdfepphs(@%dj+zp8v&8r+4s%-8*e18+^'
 #Added later myself
 #SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'aycto@9h^l&6re&)+wdfepphs(@%dj+zp8v&8r+4s%-8*e18+^')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 #DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 ALLOWED_HOSTS = [ 'keshavrajbhusal.herokuapp.com'
                  
