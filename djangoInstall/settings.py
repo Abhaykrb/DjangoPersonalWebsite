@@ -123,6 +123,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+#Added manually
 STATIC_ROOT=os.path.join(BASE_DIR,"staticfiles")
 STATIC_URL = '/static/'
 
@@ -134,7 +135,7 @@ MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-#django_heroku.settings(locals())
+
 
 if 'DATABASE_URL' in os.environ: #means heroku
     import dj_database_url
